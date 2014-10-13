@@ -4,3 +4,8 @@ __pycache__/
 
 # Vim swap files
 .*.sw[po]
+
+# Mac garbage
+.DS_Store
+# Xcode settings
+xcuserdata
