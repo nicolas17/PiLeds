@@ -19,7 +19,9 @@
 		3736E5F019EB51DA008B80AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D819EB51DA008B80AD /* UIKit.framework */; };
 		3736E5F819EB51DA008B80AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3736E5F619EB51DA008B80AD /* InfoPlist.strings */; };
 		3736E5FA19EB51DA008B80AD /* PiLedsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736E5F919EB51DA008B80AD /* PiLedsTests.m */; };
-		37FBDD6419EB562C0094C8B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FBDD6319EB562C0094C8B7 /* Main.storyboard */; };
+		37FBDD6719EB5FB00094C8B7 /* NAPLedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FBDD6619EB5FB00094C8B7 /* NAPLedModel.m */; };
+		37FBDD6A19EB60820094C8B7 /* NAPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FBDD6919EB60820094C8B7 /* NAPTableViewController.m */; };
+		37FBDD6C19EB7AC90094C8B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37FBDD6B19EB7AC90094C8B7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,11 @@
 		3736E5F519EB51DA008B80AD /* PiLedsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PiLedsTests-Info.plist"; sourceTree = "<group>"; };
 		3736E5F719EB51DA008B80AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3736E5F919EB51DA008B80AD /* PiLedsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiLedsTests.m; sourceTree = "<group>"; };
-		37FBDD6319EB562C0094C8B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		37FBDD6519EB5FB00094C8B7 /* NAPLedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPLedModel.h; sourceTree = "<group>"; };
+		37FBDD6619EB5FB00094C8B7 /* NAPLedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPLedModel.m; sourceTree = "<group>"; };
+		37FBDD6819EB60820094C8B7 /* NAPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPTableViewController.h; sourceTree = "<group>"; };
+		37FBDD6919EB60820094C8B7 /* NAPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPTableViewController.m; sourceTree = "<group>"; };
+		37FBDD6B19EB7AC90094C8B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +115,13 @@
 		3736E5DA19EB51DA008B80AD /* PiLeds */ = {
 			isa = PBXGroup;
 			children = (
+				37FBDD6B19EB7AC90094C8B7 /* Main.storyboard */,
 				3736E5E319EB51DA008B80AD /* NAPAppDelegate.h */,
 				3736E5E419EB51DA008B80AD /* NAPAppDelegate.m */,
-				37FBDD6319EB562C0094C8B7 /* Main.storyboard */,
+				37FBDD6519EB5FB00094C8B7 /* NAPLedModel.h */,
+				37FBDD6619EB5FB00094C8B7 /* NAPLedModel.m */,
+				37FBDD6819EB60820094C8B7 /* NAPTableViewController.h */,
+				37FBDD6919EB60820094C8B7 /* NAPTableViewController.m */,
 				3736E5E619EB51DA008B80AD /* Images.xcassets */,
 				3736E5DB19EB51DA008B80AD /* Supporting Files */,
 			);
@@ -223,7 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37FBDD6419EB562C0094C8B7 /* Main.storyboard in Resources */,
+				37FBDD6C19EB7AC90094C8B7 /* Main.storyboard in Resources */,
 				3736E5DF19EB51DA008B80AD /* InfoPlist.strings in Resources */,
 				3736E5E719EB51DA008B80AD /* Images.xcassets in Resources */,
 			);
@@ -245,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3736E5E519EB51DA008B80AD /* NAPAppDelegate.m in Sources */,
+				37FBDD6A19EB60820094C8B7 /* NAPTableViewController.m in Sources */,
+				37FBDD6719EB5FB00094C8B7 /* NAPLedModel.m in Sources */,
 				3736E5E119EB51DA008B80AD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
