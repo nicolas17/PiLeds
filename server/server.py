@@ -52,6 +52,7 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
     def got_status(self):
         for led in leds:
             self.send("201 %s %s\n" % (led.name, "on" if led.shining else "off"))
+        self.send("202 that's all\n")
 
     def got_on(self, ledname):
         for led in leds:
