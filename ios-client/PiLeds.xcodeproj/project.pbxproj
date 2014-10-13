@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3736E5D519EB51DA008B80AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D419EB51DA008B80AD /* Foundation.framework */; };
+		3736E5D719EB51DA008B80AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D619EB51DA008B80AD /* CoreGraphics.framework */; };
+		3736E5D919EB51DA008B80AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D819EB51DA008B80AD /* UIKit.framework */; };
+		3736E5DF19EB51DA008B80AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3736E5DD19EB51DA008B80AD /* InfoPlist.strings */; };
+		3736E5E119EB51DA008B80AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736E5E019EB51DA008B80AD /* main.m */; };
+		3736E5E519EB51DA008B80AD /* NAPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736E5E419EB51DA008B80AD /* NAPAppDelegate.m */; };
+		3736E5E719EB51DA008B80AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3736E5E619EB51DA008B80AD /* Images.xcassets */; };
+		3736E5EE19EB51DA008B80AD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5ED19EB51DA008B80AD /* XCTest.framework */; };
+		3736E5EF19EB51DA008B80AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D419EB51DA008B80AD /* Foundation.framework */; };
+		3736E5F019EB51DA008B80AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3736E5D819EB51DA008B80AD /* UIKit.framework */; };
+		3736E5F819EB51DA008B80AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3736E5F619EB51DA008B80AD /* InfoPlist.strings */; };
+		3736E5FA19EB51DA008B80AD /* PiLedsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736E5F919EB51DA008B80AD /* PiLedsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3736E5F119EB51DA008B80AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3736E5C919EB51DA008B80AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3736E5D019EB51DA008B80AD;
+			remoteInfo = PiLeds;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3736E5D119EB51DA008B80AD /* PiLeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiLeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3736E5D419EB51DA008B80AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3736E5D619EB51DA008B80AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3736E5D819EB51DA008B80AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3736E5DC19EB51DA008B80AD /* PiLeds-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PiLeds-Info.plist"; sourceTree = "<group>"; };
+		3736E5DE19EB51DA008B80AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3736E5E019EB51DA008B80AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3736E5E219EB51DA008B80AD /* PiLeds-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PiLeds-Prefix.pch"; sourceTree = "<group>"; };
+		3736E5E319EB51DA008B80AD /* NAPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAPAppDelegate.h; sourceTree = "<group>"; };
+		3736E5E419EB51DA008B80AD /* NAPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAPAppDelegate.m; sourceTree = "<group>"; };
+		3736E5E619EB51DA008B80AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3736E5EC19EB51DA008B80AD /* PiLedsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiLedsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3736E5ED19EB51DA008B80AD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3736E5F519EB51DA008B80AD /* PiLedsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PiLedsTests-Info.plist"; sourceTree = "<group>"; };
+		3736E5F719EB51DA008B80AD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3736E5F919EB51DA008B80AD /* PiLedsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiLedsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3736E5CE19EB51DA008B80AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5D719EB51DA008B80AD /* CoreGraphics.framework in Frameworks */,
+				3736E5D919EB51DA008B80AD /* UIKit.framework in Frameworks */,
+				3736E5D519EB51DA008B80AD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3736E5E919EB51DA008B80AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5EE19EB51DA008B80AD /* XCTest.framework in Frameworks */,
+				3736E5F019EB51DA008B80AD /* UIKit.framework in Frameworks */,
+				3736E5EF19EB51DA008B80AD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3736E5C819EB51DA008B80AD = {
+			isa = PBXGroup;
+			children = (
+				3736E5DA19EB51DA008B80AD /* PiLeds */,
+				3736E5F319EB51DA008B80AD /* PiLedsTests */,
+				3736E5D319EB51DA008B80AD /* Frameworks */,
+				3736E5D219EB51DA008B80AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3736E5D219EB51DA008B80AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5D119EB51DA008B80AD /* PiLeds.app */,
+				3736E5EC19EB51DA008B80AD /* PiLedsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3736E5D319EB51DA008B80AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5D419EB51DA008B80AD /* Foundation.framework */,
+				3736E5D619EB51DA008B80AD /* CoreGraphics.framework */,
+				3736E5D819EB51DA008B80AD /* UIKit.framework */,
+				3736E5ED19EB51DA008B80AD /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3736E5DA19EB51DA008B80AD /* PiLeds */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5E319EB51DA008B80AD /* NAPAppDelegate.h */,
+				3736E5E419EB51DA008B80AD /* NAPAppDelegate.m */,
+				3736E5E619EB51DA008B80AD /* Images.xcassets */,
+				3736E5DB19EB51DA008B80AD /* Supporting Files */,
+			);
+			path = PiLeds;
+			sourceTree = "<group>";
+		};
+		3736E5DB19EB51DA008B80AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5DC19EB51DA008B80AD /* PiLeds-Info.plist */,
+				3736E5DD19EB51DA008B80AD /* InfoPlist.strings */,
+				3736E5E019EB51DA008B80AD /* main.m */,
+				3736E5E219EB51DA008B80AD /* PiLeds-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3736E5F319EB51DA008B80AD /* PiLedsTests */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5F919EB51DA008B80AD /* PiLedsTests.m */,
+				3736E5F419EB51DA008B80AD /* Supporting Files */,
+			);
+			path = PiLedsTests;
+			sourceTree = "<group>";
+		};
+		3736E5F419EB51DA008B80AD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3736E5F519EB51DA008B80AD /* PiLedsTests-Info.plist */,
+				3736E5F619EB51DA008B80AD /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3736E5D019EB51DA008B80AD /* PiLeds */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3736E5FD19EB51DA008B80AD /* Build configuration list for PBXNativeTarget "PiLeds" */;
+			buildPhases = (
+				3736E5CD19EB51DA008B80AD /* Sources */,
+				3736E5CE19EB51DA008B80AD /* Frameworks */,
+				3736E5CF19EB51DA008B80AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PiLeds;
+			productName = PiLeds;
+			productReference = 3736E5D119EB51DA008B80AD /* PiLeds.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3736E5EB19EB51DA008B80AD /* PiLedsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3736E60019EB51DA008B80AD /* Build configuration list for PBXNativeTarget "PiLedsTests" */;
+			buildPhases = (
+				3736E5E819EB51DA008B80AD /* Sources */,
+				3736E5E919EB51DA008B80AD /* Frameworks */,
+				3736E5EA19EB51DA008B80AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3736E5F219EB51DA008B80AD /* PBXTargetDependency */,
+			);
+			name = PiLedsTests;
+			productName = PiLedsTests;
+			productReference = 3736E5EC19EB51DA008B80AD /* PiLedsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3736E5C919EB51DA008B80AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NAP;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Nicolás Alvarez";
+				TargetAttributes = {
+					3736E5EB19EB51DA008B80AD = {
+						TestTargetID = 3736E5D019EB51DA008B80AD;
+					};
+				};
+			};
+			buildConfigurationList = 3736E5CC19EB51DA008B80AD /* Build configuration list for PBXProject "PiLeds" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3736E5C819EB51DA008B80AD;
+			productRefGroup = 3736E5D219EB51DA008B80AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3736E5D019EB51DA008B80AD /* PiLeds */,
+				3736E5EB19EB51DA008B80AD /* PiLedsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3736E5CF19EB51DA008B80AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5DF19EB51DA008B80AD /* InfoPlist.strings in Resources */,
+				3736E5E719EB51DA008B80AD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3736E5EA19EB51DA008B80AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5F819EB51DA008B80AD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3736E5CD19EB51DA008B80AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5E519EB51DA008B80AD /* NAPAppDelegate.m in Sources */,
+				3736E5E119EB51DA008B80AD /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3736E5E819EB51DA008B80AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3736E5FA19EB51DA008B80AD /* PiLedsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3736E5F219EB51DA008B80AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3736E5D019EB51DA008B80AD /* PiLeds */;
+			targetProxy = 3736E5F119EB51DA008B80AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3736E5DD19EB51DA008B80AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3736E5DE19EB51DA008B80AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3736E5F619EB51DA008B80AD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3736E5F719EB51DA008B80AD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3736E5FB19EB51DA008B80AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3736E5FC19EB51DA008B80AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3736E5FE19EB51DA008B80AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PiLeds/PiLeds-Prefix.pch";
+				INFOPLIST_FILE = "PiLeds/PiLeds-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3736E5FF19EB51DA008B80AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PiLeds/PiLeds-Prefix.pch";
+				INFOPLIST_FILE = "PiLeds/PiLeds-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3736E60119EB51DA008B80AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PiLeds.app/PiLeds";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PiLeds/PiLeds-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PiLedsTests/PiLedsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3736E60219EB51DA008B80AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PiLeds.app/PiLeds";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PiLeds/PiLeds-Prefix.pch";
+				INFOPLIST_FILE = "PiLedsTests/PiLedsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3736E5CC19EB51DA008B80AD /* Build configuration list for PBXProject "PiLeds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3736E5FB19EB51DA008B80AD /* Debug */,
+				3736E5FC19EB51DA008B80AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3736E5FD19EB51DA008B80AD /* Build configuration list for PBXNativeTarget "PiLeds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3736E5FE19EB51DA008B80AD /* Debug */,
+				3736E5FF19EB51DA008B80AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3736E60019EB51DA008B80AD /* Build configuration list for PBXNativeTarget "PiLedsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3736E60119EB51DA008B80AD /* Debug */,
+				3736E60219EB51DA008B80AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3736E5C919EB51DA008B80AD /* Project object */;
+}
