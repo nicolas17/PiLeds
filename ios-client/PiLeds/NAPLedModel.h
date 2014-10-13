@@ -11,6 +11,7 @@
 @interface NAPLedModel : NSObject
 
 - (void)connect;
+- (void)getStatus;
 - (NSUInteger)ledCount;
 
 @end

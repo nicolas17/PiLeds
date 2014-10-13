@@ -20,7 +20,8 @@
     [super viewDidLoad];
     
     self.leds = [[NAPLedModel alloc] init];
-    //[self.leds connectAndGetStatus];
+    [self.leds connect];
+    [self.leds getStatus];
 }
 
 - (void)didReceiveMemoryWarning
