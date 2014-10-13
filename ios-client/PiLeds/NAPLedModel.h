@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class NAPLed;
+
 @interface NAPLedModel : NSObject
 
 - (void)connect;
 - (void)getStatus;
+- (NAPLed*)ledByIndex:(NSUInteger)num;
 - (NSUInteger)ledCount;
 
 @end

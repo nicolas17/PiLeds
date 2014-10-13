@@ -12,6 +12,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
+#import "NAPLed.h"
+
 @interface NAPLedModel ()
 
 @property(nonatomic, strong) NSMutableArray* leds;
@@ -48,6 +50,11 @@ void sendAll(int sock, const char* data) {
 - (NSUInteger)ledCount {
     return [self.leds count];
 }
+
+- (NAPLed *)ledByIndex:(NSUInteger)num {
+    return [self.leds objectAtIndex:num];
+}
+
 - (void)connect {
     self.conn = socket(PF_INET, SOCK_STREAM, 0);
     struct sockaddr_in sockaddr;
@@ -80,6 +87,18 @@ void sendAll(int sock, const char* data) {
         NSData* rawLine = [self readLine];
         NSString* line = [[NSString alloc] initWithData:rawLine encoding:NSUTF8StringEncoding];
         NSLog(@"Got line: %@", line);
+        NSArray* components = [line componentsSeparatedByString:@" "];
+        if ([[components objectAtIndex:0] isEqualToString:@"201"]) {
+            BOOL ledOn = [[components objectAtIndex:2] isEqualToString:@"on"];
+            NAPLed* led = [[NAPLed alloc] initWithName:[components objectAtIndex:1]
+                                               shining:ledOn];
+            [self.leds addObject:led];
+        } else if ([[components objectAtIndex:0] isEqualToString:@"202"]) {
+            break;
+        } else {
+            NSLog(@"Got unexpected code %@", [components objectAtIndex:0]);
+            assert(0);
+        }
     }
 }
 

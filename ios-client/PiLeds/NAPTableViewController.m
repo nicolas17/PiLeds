@@ -8,6 +8,7 @@
 
 #import "NAPTableViewController.h"
 #import "NAPLedModel.h"
+#import "NAPLed.h"
 
 @interface NAPTableViewController ()
 
@@ -42,15 +43,15 @@
     return [self.leds ledCount];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LED" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.textLabel.text = [self.leds ledByIndex:indexPath.row].name;
     
     return cell;
 }
-*/
+
 
 @end
