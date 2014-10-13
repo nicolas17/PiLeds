@@ -80,7 +80,7 @@ leds = [LED("A"), LED("B"), LED("C")]
 # check that LED names are unique
 assert(not has_duplicates(led.name for led in leds))
 
-HOST, PORT = "localhost", 9997
+HOST, PORT = "0.0.0.0", 9997
 
 server = ThreadedTCPServer((HOST, PORT), MyTCPHandler)
 
