@@ -48,7 +48,13 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LED" forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.leds ledByIndex:indexPath.row].name;
+    NAPLed* led = [self.leds ledByIndex:indexPath.row];
+    cell.textLabel.text = led.name;
+    if (led.isShining) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
