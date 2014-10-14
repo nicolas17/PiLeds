@@ -14,7 +14,8 @@
 
 - (void)connect;
 - (void)getStatus;
-- (NAPLed*)ledByIndex:(NSUInteger)num;
 - (NSUInteger)ledCount;
+- (NAPLed*)ledByIndex:(NSUInteger)num;
+- (void)toggleLedAtIndex:(NSUInteger)num;
 
 @end

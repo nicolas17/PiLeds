@@ -101,5 +101,14 @@ void sendAll(int sock, const char* data) {
         }
     }
 }
+- (void)toggleLedAtIndex:(NSUInteger)num {
+    NAPLed* led = [self.leds objectAtIndex:num];
+    NSString* command = [NSString stringWithFormat:@"%s %@\n", led.isShining ? "off" : "on", led.name];
+    sendAll(self.conn, command.UTF8String);
+    NSData* rawLine = [self readLine];
+    NSString* line = [[NSString alloc] initWithData:rawLine encoding:NSUTF8StringEncoding];
+    NSLog(@"Got line: %@", line);
+    led.isShining = !led.isShining;
+}
 
 @end

@@ -11,7 +11,7 @@
 @interface NAPLed : NSObject
 
 @property(nonatomic,strong,readonly) NSString* name;
-@property(nonatomic,readonly) BOOL isShining;
+@property(nonatomic) BOOL isShining;
 
 - (id)initWithName:(NSString*)name shining:(BOOL)shining;
 
