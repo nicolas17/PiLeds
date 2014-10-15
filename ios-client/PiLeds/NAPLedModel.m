@@ -61,7 +61,7 @@ void sendAll(int sock, const char* data) {
     memset(&sockaddr, 0, sizeof(sockaddr));
     sockaddr.sin_family = AF_INET;
     sockaddr.sin_port = htons(9997);
-    inet_aton("192.168.0.3", &sockaddr.sin_addr.s_addr);
+    inet_aton("192.168.0.104", &sockaddr.sin_addr.s_addr);
 
     connect(self.conn, (struct sockaddr*)&sockaddr, sizeof(sockaddr));
 }
