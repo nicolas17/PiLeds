@@ -61,8 +61,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.leds toggleLedAtIndex:indexPath.row];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 
