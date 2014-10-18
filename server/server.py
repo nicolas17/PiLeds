@@ -4,20 +4,27 @@
 # See LICENSE for more information.
 
 import socketserver
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
 
 def has_duplicates(lst):
     lst = list(lst)
     return len(lst) > len(set(lst))
 
 class LED:
-    def __init__(self, name):
+    def __init__(self, name, gpio):
         self.name = name
+        self.gpio = gpio
         self.shining = False
+        GPIO.setup(self.gpio, GPIO.OUT)
 
     def on(self):
+        GPIO.output(self.gpio, GPIO.HIGH)
         self.shining = True
 
     def off(self):
+        GPIO.output(self.gpio, GPIO.LOW)
         self.shining = False
 
 class MyTCPHandler(socketserver.StreamRequestHandler):
@@ -77,7 +84,7 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     allow_reuse_address = True
 
-leds = [LED("A"), LED("B"), LED("C")]
+leds = [LED("Rojo", 18), LED("Amarillo", 24), LED("Verde", 23)]
 
 # check that LED names are unique
 assert(not has_duplicates(led.name for led in leds))
