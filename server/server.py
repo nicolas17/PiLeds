@@ -59,6 +59,7 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
             if led.name == ledname:
                 led.on()
                 self.send("203 %s on\n" % ledname)
+                print("Turning LED %s on" % ledname)
                 break
         else:
             self.send("301 no such LED '%s'\n" % ledname)
@@ -68,6 +69,7 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
             if led.name == ledname:
                 led.off()
                 self.send("203 %s off\n" % ledname)
+                print("Turning LED %s off" % ledname)
                 break
         else:
             self.send("301 no such LED '%s'\n" % ledname)
