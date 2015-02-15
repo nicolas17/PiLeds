@@ -1,0 +1,3 @@
+[submodule "ios-client/PiLeds/CocoaAsyncSocket"]
+	path = ios-client/PiLeds/CocoaAsyncSocket
+	url = git://github.com/robbiehanson/CocoaAsyncSocket
