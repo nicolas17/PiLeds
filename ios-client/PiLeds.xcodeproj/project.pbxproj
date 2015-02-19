@@ -20,6 +20,7 @@
 		3736E5F819EB51DA008B80AD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3736E5F619EB51DA008B80AD /* InfoPlist.strings */; };
 		3736E5FA19EB51DA008B80AD /* PiLedsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3736E5F919EB51DA008B80AD /* PiLedsTests.m */; };
 		376D57021A91482D00977C46 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 376D57011A91482D00977C46 /* AsyncSocket.m */; };
+		376D57061A91495F00977C46 /* NAPLedConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 376D57051A91495F00977C46 /* NAPLedConnection.m */; };
 		37E3460919EC88F300E0AC73 /* NAPLed.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3460819EC88F300E0AC73 /* NAPLed.m */; };
 		37FBDD6719EB5FB00094C8B7 /* NAPLedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FBDD6619EB5FB00094C8B7 /* NAPLedModel.m */; };
 		37FBDD6A19EB60820094C8B7 /* NAPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FBDD6919EB60820094C8B7 /* NAPTableViewController.m */; };
@@ -55,6 +56,8 @@
 		3736E5F919EB51DA008B80AD /* PiLedsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PiLedsTests.m; sourceTree = "<group>"; };
 		376D57001A91482D00977C46 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		376D57011A91482D00977C46 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		376D57041A91495F00977C46 /* NAPLedConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPLedConnection.h; sourceTree = "<group>"; };
+		376D57051A91495F00977C46 /* NAPLedConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPLedConnection.m; sourceTree = "<group>"; };
 		37E3460719EC88F300E0AC73 /* NAPLed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPLed.h; sourceTree = "<group>"; };
 		37E3460819EC88F300E0AC73 /* NAPLed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NAPLed.m; sourceTree = "<group>"; };
 		37FBDD6519EB5FB00094C8B7 /* NAPLedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAPLedModel.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				3736E5E419EB51DA008B80AD /* NAPAppDelegate.m */,
 				37E3460719EC88F300E0AC73 /* NAPLed.h */,
 				37E3460819EC88F300E0AC73 /* NAPLed.m */,
+				376D57041A91495F00977C46 /* NAPLedConnection.h */,
+				376D57051A91495F00977C46 /* NAPLedConnection.m */,
 				37FBDD6519EB5FB00094C8B7 /* NAPLedModel.h */,
 				37FBDD6619EB5FB00094C8B7 /* NAPLedModel.m */,
 				37FBDD6819EB60820094C8B7 /* NAPTableViewController.h */,
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3736E5E519EB51DA008B80AD /* NAPAppDelegate.m in Sources */,
+				376D57061A91495F00977C46 /* NAPLedConnection.m in Sources */,
 				37FBDD6A19EB60820094C8B7 /* NAPTableViewController.m in Sources */,
 				37E3460919EC88F300E0AC73 /* NAPLed.m in Sources */,
 				376D57021A91482D00977C46 /* AsyncSocket.m in Sources */,

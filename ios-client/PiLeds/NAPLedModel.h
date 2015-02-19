@@ -10,10 +10,16 @@
 
 @class NAPLed;
 
+@protocol NAPLedModelDelegate
+- (void)ledListDidChange;
+- (void)ledDidChangeAtIndex:(NSUInteger)index;
+@end
+
 @interface NAPLedModel : NSObject
 
-- (void)connect;
-- (void)getStatus;
+@property(weak) id<NAPLedModelDelegate> delegate;
+
+- (void)start;
 - (NSUInteger)ledCount;
 - (NAPLed*)ledByIndex:(NSUInteger)num;
 - (void)toggleLedAtIndex:(NSUInteger)num;

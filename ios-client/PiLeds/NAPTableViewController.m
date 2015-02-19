@@ -10,7 +10,7 @@
 #import "NAPLedModel.h"
 #import "NAPLed.h"
 
-@interface NAPTableViewController ()
+@interface NAPTableViewController () <NAPLedModelDelegate>
 
 @end
 
@@ -21,14 +21,24 @@
     [super viewDidLoad];
     
     self.leds = [[NAPLedModel alloc] init];
-    [self.leds connect];
-    [self.leds getStatus];
+    self.leds.delegate = self;
+    [self.leds start];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - NAPLedModelDelegate
+
+- (void)ledListDidChange {
+    [self.tableView reloadData];
+}
+
+- (void)ledDidChangeAtIndex:(NSUInteger)index {
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - Table view data source
@@ -62,7 +72,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.leds toggleLedAtIndex:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 

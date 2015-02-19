@@ -8,32 +8,15 @@
 
 #import "NAPLedModel.h"
 
-#include <sys/types.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-
 #import "NAPLed.h"
+#import "NAPLedConnection.h"
 
-@interface NAPLedModel ()
+@interface NAPLedModel () <NAPLedConnectionDelegate>
 
 @property(nonatomic, strong) NSMutableArray* leds;
-@property(nonatomic) int conn;
-@property(nonatomic,strong) NSMutableData* inputBuffer;
+@property(nonatomic, strong) NAPLedConnection* conn;
 
 @end
-
-void sendAll(int sock, const char* data) {
-    size_t remaining = strlen(data);
-    size_t totalSent = 0;
-    size_t sent;
-    while (remaining > 0) {
-        sent = send(sock, data+totalSent, remaining, 0);
-        if (sent > 0) {
-            totalSent += sent;
-            remaining -= sent;
-        }
-    }
-}
 
 @implementation NAPLedModel
 
@@ -42,7 +25,6 @@ void sendAll(int sock, const char* data) {
     self = [super init];
     if (self) {
         self.leds = [[NSMutableArray alloc] init];
-        self.inputBuffer = [[NSMutableData alloc] init];
     }
     return self;
 }
@@ -55,60 +37,40 @@ void sendAll(int sock, const char* data) {
     return [self.leds objectAtIndex:num];
 }
 
-- (void)connect {
-    self.conn = socket(PF_INET, SOCK_STREAM, 0);
-    struct sockaddr_in sockaddr;
-    memset(&sockaddr, 0, sizeof(sockaddr));
-    sockaddr.sin_family = AF_INET;
-    sockaddr.sin_port = htons(9997);
-    inet_aton("192.168.0.104", &sockaddr.sin_addr.s_addr);
-
-    connect(self.conn, (struct sockaddr*)&sockaddr, sizeof(sockaddr));
+- (void)start {
+    self.conn = [[NAPLedConnection alloc] init]; //TODO initWithDelegate?
+    [self.conn setDelegate:self];
+    [self.conn connectToHost:@"192.168.0.10" error:NULL];
 }
 
-- (NSData*)readLine {
-    const void* newlinePos = memchr(self.inputBuffer.bytes, '\n', self.inputBuffer.length);
-    while (newlinePos == NULL) {
-        char buf[256];
-        size_t bytesRead = read(self.conn, buf, 256);
-        [self.inputBuffer appendBytes:buf length:bytesRead];
-        newlinePos = memchr(self.inputBuffer.bytes, '\n', self.inputBuffer.length);
-    }
-    NSRange lineRange = {0, newlinePos-self.inputBuffer.bytes};
-    NSData* retval = [self.inputBuffer subdataWithRange:lineRange];
-    lineRange.length += 1; // remove the newline too
-    [self.inputBuffer replaceBytesInRange:lineRange withBytes:nil length:0];
-    return retval;
+- (void)connectionDidConnect:(NAPLedConnection*)conn {
+    [conn fetchLedList];
 }
 
-- (void)getStatus {
-    sendAll(self.conn, "status\n");
-    while (true) {
-        NSData* rawLine = [self readLine];
-        NSString* line = [[NSString alloc] initWithData:rawLine encoding:NSUTF8StringEncoding];
-        NSLog(@"Got line: %@", line);
-        NSArray* components = [line componentsSeparatedByString:@" "];
-        if ([[components objectAtIndex:0] isEqualToString:@"201"]) {
-            BOOL ledOn = [[components objectAtIndex:2] isEqualToString:@"on"];
-            NAPLed* led = [[NAPLed alloc] initWithName:[components objectAtIndex:1]
-                                               shining:ledOn];
-            [self.leds addObject:led];
-        } else if ([[components objectAtIndex:0] isEqualToString:@"202"]) {
-            break;
-        } else {
-            NSLog(@"Got unexpected code %@", [components objectAtIndex:0]);
-            assert(0);
-        }
-    }
-}
 - (void)toggleLedAtIndex:(NSUInteger)num {
     NAPLed* led = [self.leds objectAtIndex:num];
-    NSString* command = [NSString stringWithFormat:@"%s %@\n", led.isShining ? "off" : "on", led.name];
-    sendAll(self.conn, command.UTF8String);
-    NSData* rawLine = [self readLine];
-    NSString* line = [[NSString alloc] initWithData:rawLine encoding:NSUTF8StringEncoding];
-    NSLog(@"Got line: %@", line);
-    led.isShining = !led.isShining;
+    [self.conn setLed:led.name shining:!led.isShining];
+}
+
+- (void)connection:(NAPLedConnection*)conn didGetLedList:(NSArray*)list {
+    self.leds = [NSMutableArray arrayWithArray:list];
+    [self.delegate ledListDidChange];
+}
+
+- (void)connection:(NAPLedConnection*)conn didSetLed:(NSString*)name toStatus:(BOOL)shining {
+    //int index = [[self.leds indexesOfObjectsPassingTest: ^(id obj, NSUInteger idx, BOOL* stop) {
+    //    return [obj.name isEqualTo:name];
+    //}] firstIndex];
+    int index = -1;
+    for (int i=0; i<[self.leds count]; i++) {
+        if ([[[self.leds objectAtIndex:i] name] isEqualToString:name]) {
+            index = i;
+            break;
+        }
+    }
+    assert(index >= 0);
+    [[self.leds objectAtIndex:index] setIsShining:shining];
+    [self.delegate ledDidChangeAtIndex:index];
 }
 
 @end
