@@ -15,6 +15,7 @@
 
 @property(weak) id<NAPLedConnectionDelegate> delegate;
 
+- (instancetype)initWithDelegate:(id<NAPLedConnectionDelegate>)delegate;
 - (BOOL)connectToHost:(NSString*)hostname error:(NSError **)errPtr;
 - (BOOL)fetchLedList;
 - (BOOL)setLed:(NSString*)ledName shining:(BOOL)shining;

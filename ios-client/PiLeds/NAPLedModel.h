@@ -19,6 +19,7 @@
 
 @property(weak) id<NAPLedModelDelegate> delegate;
 
+- (instancetype)initWithDelegate:(id<NAPLedModelDelegate>)delegate;
 - (void)start;
 - (NSUInteger)ledCount;
 - (NAPLed*)ledByIndex:(NSUInteger)num;

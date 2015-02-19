@@ -20,8 +20,7 @@
 {
     [super viewDidLoad];
     
-    self.leds = [[NAPLedModel alloc] init];
-    self.leds.delegate = self;
+    self.leds = [[NAPLedModel alloc] initWithDelegate:self];
     [self.leds start];
 }
 

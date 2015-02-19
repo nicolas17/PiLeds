@@ -21,10 +21,12 @@
 @implementation NAPLedModel
 
 - (instancetype)init
+- (instancetype)initWithDelegate:(id<NAPLedModelDelegate>)delegate {
 {
     self = [super init];
     if (self) {
         self.leds = [[NSMutableArray alloc] init];
+        self.delegate = delegate;
     }
     return self;
 }
@@ -38,8 +40,7 @@
 }
 
 - (void)start {
-    self.conn = [[NAPLedConnection alloc] init]; //TODO initWithDelegate?
-    [self.conn setDelegate:self];
+    self.conn = [[NAPLedConnection alloc] initWithDelegate:self];
     [self.conn connectToHost:@"192.168.0.10" error:NULL];
 }
 

@@ -19,7 +19,8 @@
 
 @implementation NAPLedConnection : NSObject
 
-- (id)init {
+- (instancetype)initWithDelegate:(id<NAPLedConnectionDelegate>)delegate {
+    self.delegate = delegate;
     self.socket = [[AsyncSocket alloc] initWithDelegate:self];
     return [super init];
 }
