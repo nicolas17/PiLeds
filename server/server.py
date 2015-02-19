@@ -4,9 +4,15 @@
 # See LICENSE for more information.
 
 import socketserver
-import RPi.GPIO as GPIO
+import sys
 
-GPIO.setmode(GPIO.BCM)
+testmode=False
+if len(sys.argv) > 1 and sys.argv[1] == '--testmode':
+    testmode=True
+
+if not testmode:
+    import RPi.GPIO as GPIO
+    GPIO.setmode(GPIO.BCM)
 
 def has_duplicates(lst):
     lst = list(lst)
@@ -17,14 +23,17 @@ class LED:
         self.name = name
         self.gpio = gpio
         self.shining = False
-        GPIO.setup(self.gpio, GPIO.OUT)
+        if not testmode:
+            GPIO.setup(self.gpio, GPIO.OUT)
 
     def on(self):
-        GPIO.output(self.gpio, GPIO.HIGH)
+        if not testmode:
+            GPIO.output(self.gpio, GPIO.HIGH)
         self.shining = True
 
     def off(self):
-        GPIO.output(self.gpio, GPIO.LOW)
+        if not testmode:
+            GPIO.output(self.gpio, GPIO.LOW)
         self.shining = False
 
 class MyTCPHandler(socketserver.StreamRequestHandler):
