@@ -60,14 +60,14 @@
     //int index = [[self.leds indexesOfObjectsPassingTest: ^(id obj, NSUInteger idx, BOOL* stop) {
     //    return [obj.name isEqualTo:name];
     //}] firstIndex];
-    int index = -1;
-    for (int i=0; i<[self.leds count]; i++) {
+    NSUInteger index = NSNotFound;
+    for (NSUInteger i=0; i<[self.leds count]; i++) {
         if ([[[self.leds objectAtIndex:i] name] isEqualToString:name]) {
             index = i;
             break;
         }
     }
-    assert(index >= 0);
+    assert(index != NSNotFound);
     [[self.leds objectAtIndex:index] setIsShining:shining];
     [self.delegate ledDidChangeAtIndex:index];
 }
