@@ -20,9 +20,7 @@
 
 @implementation NAPLedModel
 
-- (instancetype)init
 - (instancetype)initWithDelegate:(id<NAPLedModelDelegate>)delegate {
-{
     self = [super init];
     if (self) {
         self.leds = [[NSMutableArray alloc] init];
