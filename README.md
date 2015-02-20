@@ -3,7 +3,7 @@ PiLeds
 
 Experimenting with the Raspberry Pi and iOS development.
 
-`server` contains a simple TCP server written in Python 3
+`server` contains a simple TCP server written in Python 2
 that receives commands and turns LEDs on and off via GPIO,
 to be run on the Raspberry Pi.
 The list of LED names and corresponding GPIO port numbers
