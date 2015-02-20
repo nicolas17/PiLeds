@@ -70,26 +70,26 @@
     if (tag == 1) { // 'status' reply
         assert(self.tempLeds); //tempLeds should be initialized by now
 
-        if ([[components objectAtIndex:0] isEqualToString:@"201"]) {
-            BOOL ledOn = [[components objectAtIndex:2] isEqualToString:@"on"];
-            NAPLed* led = [[NAPLed alloc] initWithName:[components objectAtIndex:1]
+        if ([components[0] isEqualToString:@"201"]) {
+            BOOL ledOn = [components[2] isEqualToString:@"on"];
+            NAPLed* led = [[NAPLed alloc] initWithName:components[1]
                                                shining:ledOn];
             [self.tempLeds addObject:led];
             [self.socket readDataToData:[AsyncSocket LFData] withTimeout:-1 tag:1];
-        } else if ([[components objectAtIndex:0] isEqualToString:@"202"]) {
+        } else if ([components[0] isEqualToString:@"202"]) {
             [self.delegate connection:self didGetLedList:self.tempLeds];
         } else {
-            NSLog(@"Got unexpected code %@", [components objectAtIndex:0]);
+            NSLog(@"Got unexpected code %@", components[0]);
             assert(0); //TODO this shouldn't really be an assert, it's a protocol error
         }
     } else if (tag == 2) { // 'on'/'off' reply
-        if ([[components objectAtIndex:0] isEqualToString:@"203"]) {
-            NSString* ledName = [components objectAtIndex:1];
-            BOOL ledOn = [[components objectAtIndex:2] isEqualToString:@"on"];
+        if ([components[0] isEqualToString:@"203"]) {
+            NSString* ledName = components[1];
+            BOOL ledOn = [components[2] isEqualToString:@"on"];
 
             [self.delegate connection:self didSetLed:ledName toStatus:ledOn];
         } else {
-            NSLog(@"Got unexpected code %@", [components objectAtIndex:0]);
+            NSLog(@"Got unexpected code %@", components[0]);
             assert(0);
         }
     }

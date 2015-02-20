@@ -34,7 +34,7 @@
 }
 
 - (NAPLed *)ledByIndex:(NSUInteger)num {
-    return [self.leds objectAtIndex:num];
+    return self.leds[num];
 }
 
 - (void)start {
@@ -62,13 +62,13 @@
     //}] firstIndex];
     NSUInteger index = NSNotFound;
     for (NSUInteger i=0; i<[self.leds count]; i++) {
-        if ([[[self.leds objectAtIndex:i] name] isEqualToString:name]) {
+        if ([self.leds[i].name isEqualToString:name]) {
             index = i;
             break;
         }
     }
     assert(index != NSNotFound);
-    [[self.leds objectAtIndex:index] setIsShining:shining];
+    [self.leds[index] setIsShining:shining];
     [self.delegate ledDidChangeAtIndex:index];
 }
 
