@@ -13,6 +13,6 @@
 @property(nonatomic,strong,readonly) NSString* name;
 @property(nonatomic) BOOL isShining;
 
-- (id)initWithName:(NSString*)name shining:(BOOL)shining;
+- (instancetype)initWithName:(NSString*)name shining:(BOOL)shining;
 
 @end

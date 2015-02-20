@@ -10,7 +10,7 @@
 
 @implementation NAPLed
 
-- (id)initWithName:(NSString *)name shining:(BOOL)shining {
+- (instancetype)initWithName:(NSString *)name shining:(BOOL)shining {
     _name = name;
     _isShining = shining;
     return self;
