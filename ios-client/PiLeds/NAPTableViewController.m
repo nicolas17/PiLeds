@@ -24,12 +24,6 @@
     [self.leds start];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - NAPLedModelDelegate
 
 - (void)ledListDidChange {
