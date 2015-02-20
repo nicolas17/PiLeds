@@ -57,9 +57,6 @@
 }
 
 - (void)connection:(NAPLedConnection*)conn didSetLed:(NSString*)name toStatus:(BOOL)shining {
-    //int index = [[self.leds indexesOfObjectsPassingTest: ^(id obj, NSUInteger idx, BOOL* stop) {
-    //    return [obj.name isEqualTo:name];
-    //}] firstIndex];
     NSUInteger index = NSNotFound;
     for (NSUInteger i=0; i<[self.leds count]; i++) {
         if ([self.leds[i].name isEqualToString:name]) {
