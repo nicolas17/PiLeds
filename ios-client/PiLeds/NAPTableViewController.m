@@ -20,8 +20,8 @@
 {
     [super viewDidLoad];
     
-    self.leds = [[NAPLedModel alloc] initWithDelegate:self];
-    [self.leds start];
+    self.ledModel = [[NAPLedModel alloc] initWithDelegate:self];
+    [self.ledModel start];
 }
 
 #pragma mark - NAPLedModelDelegate
@@ -43,7 +43,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.leds ledCount];
+    return [self.ledModel ledCount];
 }
 
 
@@ -51,7 +51,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LED" forIndexPath:indexPath];
     
-    NAPLed* led = [self.leds ledByIndex:indexPath.row];
+    NAPLed* led = [self.ledModel ledByIndex:indexPath.row];
     cell.textLabel.text = led.name;
     if (led.isShining) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -63,7 +63,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.leds toggleLedAtIndex:indexPath.row];
+    [self.ledModel toggleLedAtIndex:indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 

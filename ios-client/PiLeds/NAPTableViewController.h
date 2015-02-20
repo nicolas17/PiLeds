@@ -12,6 +12,6 @@
 
 @interface NAPTableViewController : UITableViewController
 
-@property (strong, nonatomic) NAPLedModel* leds;
+@property (strong, nonatomic) NAPLedModel* ledModel;
 
 @end
